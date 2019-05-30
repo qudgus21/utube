@@ -1,0 +1,22 @@
+.videoBlock {
+  &:first-child {
+    margin-top: 100px;
+  }
+  &:nth-child(2) {
+    margin-top: 100px;
+  }
+  video {
+    margin-bottom: 10px;
+    max-width: 100%;
+  }
+  .video__description {
+    margin-bottom: 15px;
+    font-weight: 600;
+    font-size: 18px;
+  }
+  .videoBlock__title {
+    font-size: 18px;
+    font-weight: 300;
+    margin-bottom: 10px;
+  }
+}

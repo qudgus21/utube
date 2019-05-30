@@ -1,0 +1,74 @@
+extends layouts/main
+include mixins/videoPlayer
+include mixins/otherVideos
+
+block content
+    .videoDetail__page
+        .video-detail__container
+            +videoPlayer({
+                src:video.fileUrl
+            })
+            .video__info-columns
+                .video__info-column
+                    h5.video__title=video.title
+                    if video.views === 1
+                        span.video__views 1 view
+                    else 
+                        span.video__views #{video.views} views
+                .video__info-column
+                    a(href=routes.userDetail(video.creator.id))
+                        img.avatar#jsUserImage(src=user.avatarUrl)               
+                    .video__author                   
+                        a(href=routes.userDetail(video.creator.id))=video.creator.name
+                        .updated Updated:
+                            span   
+                            span=video.createdAt
+                        p.video__description=video.description
+                        if loggedUser && video.creator.id === loggedUser.id
+                            a(href=routes.editVideo(video.id))
+                                button Edit video
+                .video__info-column
+                    .video__comments
+                        if video.comments.length === 1
+                            span.video__comment-number
+                                span#jsCommentNumber 1 
+                                span
+                                |comment
+                        else
+                            span.video__comment-number
+                                span#jsCommentNumber #{video.comments.length}
+                                span 
+                                |comments
+                        form.add__comment#jsAddComment
+                            input(type="text", placeholder="Add a comment")
+                        ul.video__comments-list#jsCommentList
+                            each comment in video.comments.reverse()
+                                li
+                                    .comment__creator-div
+                                        img(src=comment.avatarUrl)
+                                        .comment__creator-info
+                                            span=comment.name
+                                            p(id=String(comment._id))=comment.text                         
+                                    if comment.creator== loggedUser.id
+                                        .comment__update
+                                            .comment__update-image
+                                                i.fas.fa-ellipsis-v
+                                            .comment__update-list.update__list-show
+                                                .update-update
+                                                    i.fas.fa-pencil-alt
+                                                    span update
+                                                .update-delete
+                                                    i.fas.fa-trash-alt
+                                                    span delete
+        .otherVideo__container
+            .otherVideos__title
+                span others
+            each video in videos
+                +otherVideos({
+                    id:video.id,
+                    videoFile:video.fileUrl,
+                    views:video.views,
+                    description:video.description,
+                    title:video.title
+                })
+
