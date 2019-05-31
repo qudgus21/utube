@@ -4,7 +4,7 @@ const addCommentForm = document.getElementById("jsAddComment");
 const commentList = document.getElementById("jsCommentList");
 const commentNumber = document.getElementById("jsCommentNumber");
 
-const a = 143;
+const a = 1435;
 
 let pTag = " ";
 let iTag1 = " ";
