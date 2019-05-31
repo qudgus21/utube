@@ -1,0 +1,18 @@
+extends layouts/main
+//- include mixins/videoBlock
+include mixins/searchVideo
+
+block content
+    .search_header
+        |searching for #{searchingBy}
+    .search_videos
+        if videos.length === 0
+            h5 No Videos Found 😢
+        each video in videos
+            +searchVideo({
+                videoFile:video.fileUrl,
+                id:video.id,
+                title:video.title,
+                views:video.views,
+                description:video.description
+            })
