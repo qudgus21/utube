@@ -7,7 +7,7 @@
     "dev:assets": "cd src && cross-env WEBPACK_ENV=development webpack -w",
     "build:assets": "cd src && cross-env WEBPACK_ENV=production webpack",
     "build:server": "babel src --out-dir build",
-    "copyAll": "shx cp -R src/static build && cp -R src/views build && cp -R src/uploads build",
+    "copyAll": "shx cp -R src/static build && shx cp -R src/views build && shx cp -R src/uploads build",
     "build": "npm run build:server && npm run build:assets && npm run copyAll",
     "prebuild": "shx rm -rf build",
     "tunnel": "ngrok http 4000",
