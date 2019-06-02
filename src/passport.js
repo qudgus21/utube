@@ -11,9 +11,9 @@ passport.use(
     {
       clientID: process.env.GH_ID,
       clientSecret: process.env.GH_SECRET,
-      callbackURL: process.env.PRODUCTION
-        ? `https://polar-brushlands-17902.herokuapp.com${routes.githubCallback}`
-        : `http://localhost:3000${routes.githubCallback}`
+      callbackURL: `https://polar-brushlands-17902.herokuapp.com${
+        routes.githubCallback
+      }`
     },
     githubLoginCallback
   )
