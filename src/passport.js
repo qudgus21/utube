@@ -1,22 +1,16 @@
-import dotenv from "dotenv";
 import passport from "passport";
 import User from "./models/User";
 import GitHubStrategy from "passport-github";
 import { githubLoginCallback } from "./controllers/globalController";
-import routes from "./routes";
-
-dotenv.config();
 
 passport.use(User.createStrategy());
 
 passport.use(
   new GitHubStrategy(
     {
-      clientID: process.env.GH_ID,
-      clientSecret: process.env.GH_SECRET,
-      callbackURL: `https://polar-brushlands-17902.herokuapp.com${
-        routes.githubCallback
-      }`
+      clientID: "a6c7f1df315d0ff0f32c",
+      clientSecret: "e870cf97a9bebcc79667003e2ce0a9ec401251bc",
+      callbackURL: "http://localhost:3000/auth/github/callback"
     },
     githubLoginCallback
   )
