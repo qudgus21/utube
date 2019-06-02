@@ -25,7 +25,6 @@
   },
   "homepage": "https://github.com/qudgus21/utube#readme",
   "devDependencies": {
-    "babel-plugin-transform-runtime": "^6.23.0",
     "eslint": "^5.9.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-config-prettier": "^3.3.0",
@@ -50,7 +49,6 @@
     "css-loader": "^1.0.1",
     "dotenv": "^6.1.0",
     "express": "^4.16.4",
-    "express-flash": "0.0.2",
     "express-session": "^1.15.6",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "get-blob-duration": "^1.0.0",
