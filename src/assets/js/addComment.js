@@ -34,7 +34,6 @@ const handleDelete = async event => {
       commentId: deleteId
     }
   });
-
   if (response.status === 200) {
     li.remove();
     decreaseNumber();

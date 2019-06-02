@@ -9,8 +9,9 @@
     "build:server": "babel src --out-dir build",
     "copyAll": "shx cp -R src/static build && shx cp -R src/views build && shx cp -R src/uploads build",
     "build": "npm run build:server && npm run build:assets && npm run copyAll",
+    "prebuild": "shx rm -rf build",
     "tunnel": "ngrok http 4000",
-    "start": "PRODUCTION=true node build/init.js",
+    "start": "cross-env NODE_ENV=production node build/init.js",
     "prestart": "npm run build"
   },
   "repository": {
@@ -24,6 +25,7 @@
   },
   "homepage": "https://github.com/qudgus21/utube#readme",
   "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.4.4",
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-config-prettier": "^4.2.0",

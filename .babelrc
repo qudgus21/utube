@@ -1,5 +1,5 @@
 {
   "presets": ["@babel/preset-env"],
-  "ignore": ["src/assets/", "src/static", "src/webpack.config.js"]
-  // "plugins": [["@babel/transform-runtime"]]
+  "ignore": ["src/assets/", "src/static", "src/webpack.config.js"],
+  "plugins": [["@babel/transform-runtime"]]
 }

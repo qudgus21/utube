@@ -28,7 +28,8 @@ export const postJoin = async (req, res, next) => {
     try {
       const user = await User({
         name,
-        email
+        email,
+        avatarUrl: "../uploads/profile.png"
       });
       await User.register(user, password);
       next();
@@ -67,7 +68,6 @@ export const search = async (req, res) => {
   } catch (error) {
     console.log(error);
   }
-  console.log(videos);
   res.render("search", { pageTitle: "Search", searchingBy, videos });
 };
 
