@@ -15,7 +15,6 @@ import apiRouter from "./routers/apiRouter";
 import MongoStore from "connect-mongo";
 import "./passport";
 import flash from "express-flash";
-import "@babel/polyfill";
 import path from "path";
 
 const app = express();
