@@ -26,6 +26,7 @@
   "homepage": "https://github.com/qudgus21/utube#readme",
   "devDependencies": {
     "@babel/plugin-transform-runtime": "^7.4.4",
+    "babel-loader": "^8.0.6",
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-config-prettier": "^4.2.0",
@@ -45,7 +46,8 @@
     "autoprefixer": "^9.5.1",
     "aws-sdk": "^2.463.0",
     "axios": "^0.18.0",
-    "babel-loader": "^8.0.5",
+    "babel-core": "^6.26.3",
+    "babel-polyfill": "^6.26.0",
     "body-parser": "^1.19.0",
     "connect-mongo": "^2.0.3",
     "cookie-parser": "^1.4.4",

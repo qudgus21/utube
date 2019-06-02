@@ -5,6 +5,8 @@ import "@babel/polyfill";
 import "./models/Video";
 import "./models/Comment";
 import "./models/User";
+import "babel-core/register";
+import "babel-polyfill";
 
 dotenv.config();
 
