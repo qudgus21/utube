@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/qudgus21/utube#readme",
   "devDependencies": {
+    "babel-plugin-transform-runtime": "^6.23.0",
     "eslint": "^5.9.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-config-prettier": "^3.3.0",
