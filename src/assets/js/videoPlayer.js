@@ -40,6 +40,8 @@ function getCurrentTime() {
 
 function setTotalTime() {
   const totalTimeString = formatDate(videoPlayer.duration);
+  console.log(videoPlayer.duration);
+  console.log(videoPlayer);
   totalTime.innerHTML = totalTimeString;
   setInterval(getCurrentTime, 1000);
 }
